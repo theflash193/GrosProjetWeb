@@ -1,0 +1,40 @@
+test:
+    menu:
+        home:                         "Accueil"
+        login:                        "Se connecter"
+        logout:                       "Se déconnecter"
+        register:                     "S'inscrire"
+        lang:                         "Langue"
+        profile:
+            show:                     "Voir le profil"
+            edit:                     "Modifier le profil"
+        mail:                         "Mail"
+        forum:                        "Forum"
+        ticket:                       "Tickets"
+        ldap:                         "LDAP"
+        modules:                      "Modules"
+        notes:                        "Notes"
+        admin:
+            label:                    "Administration"
+            users:                    "Gérer les utilisateurs"
+            forums:                   "Gérer les forums"
+            modules:                  "Gérer les modules"
+            notes:                    "Gérer les notes"
+            tickets:                  "Gérer les tickets"
+            activity:                 "Gérer les activité"
+            bareme:                   "Gérer les Barème"
+            logs:
+                show:                 "Voir les logs"
+        impers:                       "Changer d'utilisateur"
+        exitimpers:                   "Quitter cet utilisateur"
+    index:
+        hello:                        "Bonjour"
+        welcomemessage:               "bienvenue sur mon site"
+        mainmessage:                  "C'est pas encore très fourni, mais il faut bien un début."
+    locale:
+        language:
+            show:                     "La Langue du site est"
+            edit:                     "Changer la langue en"
+            edited:                   "La langue a été changée en"
+    impers:
+        logas:                        "Se connecter en tant que"

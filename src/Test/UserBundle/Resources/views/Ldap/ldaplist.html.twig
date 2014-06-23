@@ -1,0 +1,24 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+	<form action="{{ path('ldap_index') }}" method="post">
+	Filter : <input type='text' name='ldapfilter' value='{{ filter }}' />
+	<input type='submit' name='btsubmit' value='Rechercher' />
+	</form>
+	<table class="records_list">
+        <tbody>
+        <tr>
+        	<th>Uid</th>
+        	<th>Lastname</th>
+        	<th>Firstname</th>
+        </tr>
+        {% for user in infos %}
+            <tr>
+                <td><a href='{{ path('ldap_index') }}/uid={{ user.uid }}'>{{ user.uid }}</a></td>
+                <td>{{ user.lastname}}</td>
+                <td>{{ user.firstname }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,13 @@
+parameters:
+#    user.example.class: Test\UserBundle\Example
+
+services:
+    user.kernelrequest_listener:
+        class: Test\UserBundle\Listener\KernelRequestListener
+        arguments:
+            - @service_container
+            - @doctrine.orm.entity_manager
+
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+            - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }

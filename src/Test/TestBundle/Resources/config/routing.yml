@@ -1,0 +1,76 @@
+test_homepage:
+    pattern:  /
+    defaults: { _controller: TestBundle:Default:index }
+
+test_locale:
+    pattern:  /locale
+    defaults: { _controller: TestBundle:Default:locale }
+
+test_locale_set:
+    pattern:  /locale/{locale}
+    defaults: { _controller: TestBundle:Default:setlocale }
+    requirements:
+
+
+test_impers:
+    pattern:  /impers
+    defaults: { _controller: TestBundle:Default:impers }
+
+test_logs:
+    pattern:  /logs
+    defaults: { _controller: TestBundle:Default:logs }
+
+##  Modules_admin
+
+test_modules_admin:
+    pattern:  /modules_admin
+    defaults: { _controller: TestBundle:Module:modules_admin }
+
+test_new_module:
+    pattern:  /new_module
+    defaults: { _controller: TestBundle:Module:new_module }
+
+test_edit_module:
+    pattern:  /edit_module/{id}
+    defaults: { _controller: TestBundle:Module:edit_module }
+
+test_del_module:
+    pattern:  /del_module/{id}
+    defaults: { _controller: TestBundle:Module:del_module }
+
+##  Activities_admin
+
+test_activities_admin:
+    pattern:  /activity_admin
+    defaults: { _controller: TestBundle:Activities:activities_admin }
+
+test_new_activities:
+    pattern:  /new_activity
+    defaults: { _controller: TestBundle:Activities:new_activity }
+
+test_edit_activities:
+    pattern:  /edit_activity/{id}
+    defaults: { _controller: TestBundle:Activities:edit_activity }
+
+test_del_activities:
+    pattern:  /del_activity/{id}
+    defaults: { _controller: TestBundle:Activities:del_activity }
+
+##  Fin
+
+test_notes_admin:
+    pattern:  /notes_admin
+    defaults: { _controller: TestBundle:Default:notes_admin }
+
+test_modules:
+    pattern:  /modules
+    defaults: { _controller: TestBundle:Default:modules }
+
+test_notes:
+    pattern:  /notes
+    defaults: { _controller: TestBundle:Default:notes }
+
+
+test_baremes_admin:
+    pattern:  /bareme_admin
+    defaults: { _controller: TestBundle:Default:bareme_admin }

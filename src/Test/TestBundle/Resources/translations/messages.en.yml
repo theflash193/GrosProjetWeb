@@ -1,0 +1,41 @@
+test:
+    menu:
+        home:                         "Home"
+        login:                        "Log in"
+        logout:                       "Log out"
+        register:                     "Register"
+        lang:                         "Language"
+        profile:
+            show:                     "View profile"
+            edit:                     "Edit profile"
+        mail:                         "Mail"
+        forum:                        "Forum"
+        ticket:                       "Tickets"
+        ldap:                         "LDAP"
+        modules:                      "Module"
+        notes:                        "Note"
+        admin:
+            label:                    "Admin"
+            users:                    "Admin users"
+            forums:                   "Admin forums"
+            modules:                  "Admin modules"
+            notes:                    "Admin notes"
+            tickets:                  "Admin tickets"
+            activity:                 "admin activity"
+            bareme:                   "admin Bareme"
+            logs:
+                show:                 "Show logs"
+        impers:                       "Log as user"
+        exitimpers:                   "Back to admin status"
+    index:
+        hello:                        "Hello"
+        welcomemessage:               "welcome to my website"
+        mainmessage:                  "This isn't much, but it's still something"
+    locale:
+        language:
+            show:                     "The language of this website is"
+            edit:                     "Change the language to"
+            edited:                   "The language has been successfully edited to"
+    impers:
+        logas:                        "Log as"
+

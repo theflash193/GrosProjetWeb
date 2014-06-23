@@ -1,0 +1,11 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ parent() }} - Symfony 2{% endblock %}
+{% block body %}
+	<h6>{{ 'test.locale.language.show'|trans }} : {{ app.request.locale }}.</h6>
+	<br />
+	<br />
+	<a href="{{ path('test_locale') }}/fr">{{ 'test.locale.language.edit'|trans }} 'fr'.</a>
+	<br />
+	<a href="{{ path('test_locale') }}/en">{{ 'test.locale.language.edit'|trans }} 'en'.</a>
+{% endblock %}

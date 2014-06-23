@@ -1,0 +1,15 @@
+# app/config/security.yml
+imports:
+    - { resource: @UserBundle/Resources/config/security.yml }
+
+security:
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER, ROLE_ADMIN_TICKET, ROLE_ALLOWED_TO_SWITCH
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/logs$, role: ROLE_ADMIN }

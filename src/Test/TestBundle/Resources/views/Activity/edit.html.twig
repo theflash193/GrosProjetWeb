@@ -1,0 +1,13 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ parent() }} - Symfony 2{% endblock %}
+{% block body %}
+<h1>Modules admin section</h3><br>
+<h2>édition</h2>
+<div class="well">
+  <form method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <input type="submit" class="btn btn-primary" />
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+	{% if infos.picture is defined %}
+	<img src='data:image/png;base64,{{ infos.picture }}' alt='{{ infos.uid }}'' title='{{ infos.lastname }} {{ infos.firstname }}' />
+	{% else %}
+	No user picture
+	{% endif %}
+	<br />
+	<br />
+	Uid : {{ infos.uid }}
+	<br />
+	Lastname : {{ infos.lastname }}
+	<br />
+	Firstname : {{ infos.firstname }}
+	<br />
+	{% if infos.homedir is defined %}
+	Home directory : {{ infos.homedir }}
+	<br />
+	{% endif %}
+	{% if infos.emails is defined %}
+	Emails :
+	<br />
+	{% for email in infos.emails %}
+		- {{ email }}
+		<br />
+	{% endfor %}
+	{% endif %}
+{% endblock %}

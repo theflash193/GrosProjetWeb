@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="{{ asset('/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('/bootstrap/css/bootstrap-responsive.css') }}">
+        <script src="{{ asset('/jquery-1.11.0.min.js') }}"></script>
+        <script src="{{ asset('/bootstrap/js/bootstrap.min.js') }}"></script>
+        <title>{% block title %}Intra {% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="{{ path('test_homepage') }}"><img src="https://scontent-a.xx.fbcdn.net/hphotos-xfa1/t1.0-9/10155018_1431663267081980_6708157385965537841_n.jpg" alt="home" width="30" height="30"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <li><a href="{{ path('fos_user_profile_show') }}">{{ 'test.menu.profile.show'|trans }}</a></li>
+                <li><a href="{{ path('fos_user_profile_edit') }}">{{ 'test.menu.profile.edit'|trans }}</a></li>
+                <li><a href="{{ path('user_mail') }}">{{ 'test.menu.mail'|trans }}</a></li>
+                <li><a href="{{ path('ccdn_homepage') }}">{{ 'test.menu.forum'|trans }}</a></li>
+                {% if not is_granted("ROLE_TICKET_ADMIN") %}
+                <li><a href="{{ path('hackzilla_ticket') }}">{{ 'test.menu.ticket'|trans }}</a></li>
+                {% endif %}
+                <li><a href="{{ path('ldap_index') }}">{{ 'test.menu.ldap'|trans }}</a></li>
+                <li><a href="{{ path('test_modules') }}">{{ 'test.menu.modules'|trans }}</a></li>
+                <li><a href="{{ path('test_notes') }}">{{ 'test.menu.notes'|trans }}</a></li>
+
+                {% if is_granted("ROLE_ADMIN") %}
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ 'test.menu.admin.label'|trans }} <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{{ path('user') }}">{{ 'test.menu.admin.users'|trans }}</a></li>
+                {% if is_granted("ROLE_SUPER_ADMIN") %}
+                    <li><a href="{{ path('ccdn_forum_admin_index') }}">{{ 'test.menu.admin.forums'|trans }}</a></li>
+                    <li><a href="{{ path('test_modules_admin') }}">{{ 'test.menu.admin.modules'|trans }}</a></li>
+                    <li><a href="{{ path('test_notes_admin') }}">{{ 'test.menu.admin.notes'|trans }}</a></li>
+                    <li><a href="{{ path('test_activities_admin') }}">{{ 'test.menu.admin.activity'|trans }}</a></li>
+                    <li><a href="{{ path('test_baremes_admin') }}">{{ 'test.menu.admin.bareme'|trans }}</a></li>
+                {% endif %}
+                {% if is_granted("ROLE_TICKET_ADMIN") %}
+                    <li><a href="{{ path('hackzilla_ticket') }}">{{ 'test.menu.admin.tickets'|trans }}</a></li>
+                {% endif %}
+                    <li><a href="{{ path('test_logs') }}">{{ 'test.menu.admin.logs.show'|trans }}</a></li>
+                  </ul>
+                </li>
+                {% endif %}
+                {% else %}
+                <li><a href="{{ path('fos_user_security_login') }}">{{ 'test.menu.login'|trans }}</a></li>
+                <li><a href="{{ path('fos_user_registration_register') }}">{{ 'test.menu.register'|trans }}</a></li>
+                {% endif %}
+                </ul>
+              <ul class="nav navbar-nav navbar-right">
+                {% if is_granted('ROLE_PREVIOUS_ADMIN') %}
+                <li><a href="{{ path('test_homepage', {'_switch_user': '_exit'}) }}">{{ 'test.menu.exitimpers'|trans}}</a></li>
+                {% endif %}
+                {% if is_granted("ROLE_ADMIN") %}
+                <li><a href="{{ path('test_impers') }}">{{ 'test.menu.impers'|trans}}</a></li>
+                {% endif %}
+                <li><a href="{{ path('test_locale') }}">{{ 'test.menu.lang'|trans }}</a></li>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <li><a href="{{ path('fos_user_security_logout') }}">{{ 'test.menu.logout'|trans }} ({{ app.user.username }})</a></li>
+                {% else %}
+                <li><a href="{{ path('fos_user_registration_register') }}">{{ 'test.menu.register'|trans }}</a></li>
+                <li><a href="{{ path('fos_user_security_login') }}">{{ 'test.menu.login'|trans }}</a></li>
+                {% endif %}
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

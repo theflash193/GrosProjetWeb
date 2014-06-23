@@ -1,0 +1,24 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+<form action="{{ path('send_mail') }}" method="post">
+    <table class="records_list">
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td style="padding-left: 10px"></td>
+                <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.username }}</a></td>
+                <td style="margin-left: 10px">{{ entity.email }}</td>
+
+                <td>
+                    <ul>
+                        <input type="checkbox" name="id[]" value="{{ entity.email }}"/>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <input type="submit" value="send mail">
+</form>
+{% endblock %}

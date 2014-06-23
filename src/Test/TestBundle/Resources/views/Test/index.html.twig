@@ -1,0 +1,135 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ parent() }}42{% endblock %}
+{% block body %}
+	<!--<h4>{{ 'test.index.hello'|trans }}{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}&nbsp;{{ app.user.username }}{% endif %}, {{ 'test.index.welcomemessage'|trans }}.</h4>
+	<h6>{{ 'test.index.mainmessage'|trans }}.</h6>
+	<br/>
+	<h6>{{ 'test.locale.language.show'|trans }} : {{ app.request.locale }}.</h6>-->
+	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+		<div class="wrapper">
+			<div class="span12">
+				<h2>{{ 'test.index.hello'|trans }}&nbsp;{{ app.user.username }}</h2>
+				</br>
+			</div>
+			<div class="span12 my_block">
+				<h1>Bienvenue sur l'intra</h1>
+				<h5>On est la première promo. On est born to code. En avant les gars!!! AHOU! AHOU! AHOU!</h5	>
+			</div>
+			<div class="span6 my_block"><h1>Hot News</h1>
+				<table>
+					<tr>
+						<td><h5>News 1&nbsp:&nbspXavier Niel a annoncé que la première promo recevra...&nbsp</h5></td>
+						<td><a href="">lire la suite</a></a></td>
+					</tr>
+					<tr>
+						<td><h5>News 2&nbsp:&nbspFree va recruter les étudiants de 42 avec un salaire de...	&nbsp</h5></td>
+						<td><a href="">lire la suite</a></a></td>
+					</tr>
+				</table>
+			</div>
+			<div class="span6 my_block"><h1>Activités à 42</h1>
+				<table>
+					<tr>
+						<td><h5>Conferences Amphi&nbsp:&nbsp</h5></td>
+						<td><a href="">2</a>&nbspen cours</a></td>
+					</tr>
+					<tr>
+						<td><h5>Hackathons&nbsp:&nbsp</h5></td>
+						<td><a href="">1</a>&nbspen cours</a></td>
+					</tr>
+				</table>
+			</div>
+			<div class="span3 my_block">
+				<h1>Projets à venir</h1>
+				</br>
+				<h5>L'examen <a href="">Exam 4</a> approche, pensez à vous inscrire</h5>
+				<p>Rendez-vous le 16/06/2014, 00h00</p>
+				</br>
+				<h5>Le projet C++ est en cours</h5>
+				<p>Vous êtes inscrit, c'est bien !</p>
+				<p> <a href="">Lisez le sujet</a>, faites votre rendu avant 22/07/2014, 23h42</p>
+				</br>
+				<h5>Le projet JAVA est en cours</h5>
+				<p>Vous êtes inscrit, c'est bien !</p>
+				<p> <a href="">Lisez le sujet</a>, faites votre rendu avant 30/08/2014, 23h42</p>
+				</br>
+				<h5>Le projet Application mobile est en cours</h5>
+				<p>Vous êtes inscrit, c'est bien !</p>
+				<p> <a href="">Lisez le sujet</a>, faites votre rendu avant 31/10/2014, 23h42</p>
+				</br>
+				</br>
+			</div>
+			<div class="span3 my_block">
+				<h1>Notes</h1>
+				</br>
+				<h5>L'examen Exam 1 est terminé</h5>
+				<p>La moulinette vous a noté 15 à <a href="">Exam 3</a></p>
+				</br>
+				<h5>L'examen Exam 2 est terminé</h5>
+				<p>La moulinette vous a noté 17 à <a href="">Exam 3</a></p>
+				</br>
+				<h5>L'examen Exam 3 est terminé</h5>
+				<p>La moulinette vous a noté 22 à <a href="">Exam 3</a></p>
+				</br>
+				<h5>Le projet Framework 3 est terminé</h5>
+				<p>La moulinette vous a noté 17 à <a href="">Framework 3</a></p>
+				</br>
+				</br>
+				</br>
+				</br>
+				</br>
+				</br>
+				</br>
+				</br>
+				</br>
+				</br>
+			</div>
+			<div class="span3 my_block">
+				<h1>Correction</h1>
+				</br>
+				<h5>Gros Projet Web</h5>
+				</br>
+				<p><a href="">Vous devez noter jhyun</a></p>
+				<p><a href="">Vous devez noter dbenoit</a></p>
+				<p><a href="">Vous devez noter grass-kw</a></p>
+				<p><a href="">Vous devez noter mguilbau</a></p>
+				<p><a href="">Vous devez noter sdomingu</a></p>
+				<p><a href="">Vous devez noter gsaunier</a></p>
+				<p><a href="">Vous devez noter cdauphin</a></p>
+				<p><a href="">Vous devez noter aardjoun</a></p>
+				<p><a href="">Vous devez être noté par abanvill</a></p>
+				<p><a href="">Vous devez être noté par fle-mint</a></p>
+				<p><a href="">Vous devez être noté par ysoto</a></p>
+				<p><a href="">Vous devez être noté par jburet</a></p>
+				<p><a href="">Vous devez être noté par gbir</a></p>
+				<p><a href="">Vous devez être noté par leicampi</a></p>
+				<p><a href="">Vous devez être noté par bgaucin</a></p>
+				<p><a href="">Vous devez être noté par tleroy</a></p>
+			</div>
+			<div class="span3 my_block">
+				<h1>Correction</h1>
+				</br>
+				<h5>42sh</h5>
+				</br>
+				<p><a href="">Vous devez noter sdomingu</a></p>
+				<p><a href="">Vous devez noter gsaunier</a></p>
+				<p><a href="">Vous devez noter cdauphin</a></p>
+				<p><a href="">Vous devez noter aardjoun</a></p>
+				<p><a href="">Vous devez noter jhyun</a></p>
+				<p><a href="">Vous devez noter dbenoit</a></p>
+				<p><a href="">Vous devez noter grass-kw</a></p>
+				<p><a href="">Vous devez noter mguilbau</a></p>
+				<p><a href="">Vous devez être noté par abanvill</a></p>
+				<p><a href="">Vous devez être noté par fle-mint</a></p>
+				<p><a href="">Vous devez être noté par ysoto</a></p>
+				<p><a href="">Vous devez être noté par jburet</a></p>
+				<p><a href="">Vous devez être noté par gbir</a></p>
+				<p><a href="">Vous devez être noté par leicampi</a></p>
+				<p><a href="">Vous devez être noté par bgaucin</a></p>
+				<p><a href="">Vous devez être noté par tleroy</a></p>
+			</div>
+		</div>
+	{% endif %}
+
+{% endblock %}

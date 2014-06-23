@@ -1,0 +1,8 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ parent() }} - Symfony 2{% endblock %}
+{% block body %}
+	{% for user in users %}
+	<a href="{{ app.request.getBaseURL() }}/?_switch_user={{ user.username }}">{{ 'test.impers.logas'|trans }} '{{ user.username }}'</a><br />
+	{% endfor %}
+{% endblock %}

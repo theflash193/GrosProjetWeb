@@ -1,0 +1,34 @@
+test:
+    menu:
+        home:                         "ACC"
+        login:                        "CONN"
+        logout:                       "DISCONN"
+        register:                     "INSC"
+        lang:                         "LANG"
+        profile:
+            show:                     "PROF"
+            edit:                     "EPROF"
+        mail:                         "MAYL"
+        forum:                        "FRM"
+        ticket:                       "TIK"
+        ldap:                         "LDOUP"
+        admin:
+            label:                    "ADM"
+            users:                    "ADMU"
+            forums:                   "ADMF"
+            tickets:                  "ADMT"
+            logs:
+                show:                 "LGS"
+        impers:                       "C AS"
+        exitimpers:                   "BK TO ADM"
+    index:
+        hello:                        "Bounjour"
+        welcomemessage:               "biennvenioue sul moun sit"
+        mainmessage:                  "C'est pas encole tlès foulni, mais il faut bien oun déboute."
+    locale:
+        language:
+            show:                     "La Loungue dou site elle ett"
+            edit:                     "Channger la loungue enne"
+            edited:                   "La loungue elle a été channgée enn"
+    impers:
+        logas:                        "Counnect as"

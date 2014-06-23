@@ -1,0 +1,32 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ parent() }} - Symfony 2{% endblock %}
+{% block body %}
+<h3>Modules admin section</h3><br>
+          <ul class="nav nav-pills nav-stacked">
+            <li><a href="{{ path('test_new_module') }}">Ajouter un module</a></li>
+          
+
+          <table class="table table-condensed table-responsive table-bordered">
+			<tr>
+				<td>nom</td>
+				<td>nombre utilisateur</td>
+				<td>description</td>
+				<td>credits</td>
+				<td>modification</td>
+				<td>suppresion</td>
+			</tr>
+			{% for modules in liste_modules %}
+			<tr>
+		  		<td>{{ modules.name }}</td>
+		  		<td>{{ modules.maxusers }}</td>
+				<td>{{ modules.description }}</td>
+				<td>{{ modules.credits }}</td>
+				<td><a href="{{ path('test_edit_module', { 'id': modules.id })}}">Modifier le module</a></td>
+				<td><a href="{{ path('test_del_module', { 'id': modules.id })}}">Supprimer un module</a></td>
+			</tr>
+			{% endfor %}
+			</table>
+          </ul>
+</div>
+{% endblock %}

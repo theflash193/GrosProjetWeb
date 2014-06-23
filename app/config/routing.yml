@@ -1,0 +1,18 @@
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+test:
+    resource: "@TestBundle/Resources/config/routing.yml"
+    prefix:   /
+
+CCDNForumForumBundle:
+    resource: "@CCDNForumForumBundle/Resources/config/routing.yml"
+
+hackzilla_ticket:
+    resource: "@HackzillaTicketBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ccdn_homepage:
+    pattern: /forum
+    defaults: { _controller: CCDNForumForumBundle:UserCategory:index, _locale: forum, forumName: Forum }

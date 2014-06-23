@@ -1,0 +1,22 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ parent() }} - Symfony 2{% endblock %}
+{% block body %}
+	<table class="table-striped table-bordered">
+	<tr>
+		<th>Id</th>
+		<th>User</th>
+		<th>Action</th>
+		<th>Infos</th>
+		<th>Date</th>
+	{% for log in logs %}
+	<tr>
+		<td>{{ log.id }}</td>
+		<td>{{ log.username }}</td>
+		<td>{{ log.action }}</td>
+		<td>{{ log.infos }}</td>
+		<td>{{ log.date|date('d/m/Y H:i:s') }}</td>
+	</tr>
+	{% endfor %}
+	</table>
+{% endblock %}
